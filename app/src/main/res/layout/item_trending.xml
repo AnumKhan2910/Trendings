@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.gittrendings.data.TrendingUIData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/margin_50dp"
+            android:layout_height="@dimen/margin_50dp"
+            android:layout_margin="@dimen/margin_16dp"
+            load_image="@{data.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{data.fullName}"
+            tool:text="anum"
+            app:layout_constraintStart_toEndOf="@id/image"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.name}"
+            tool:text="anum"
+            android:layout_marginTop="@dimen/margin_2dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.description}"
+            tool:text="Description"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/name"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="Python"
+            android:text="@{data.language}"
+            android:drawablePadding="@dimen/margin_4dp"
+            android:drawableStart="@drawable/ic_circle"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/desc"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="115"
+            android:text="@{data.stargazersCount}"
+            android:drawablePadding="@dimen/margin_4dp"
+            android:drawableStart="@drawable/ic_star"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            app:layout_constraintStart_toEndOf="@id/language"
+            app:layout_constraintTop_toBottomOf="@id/desc"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_2dp"
+            app:layout_constraintTop_toBottomOf="@id/stars"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/margin_4dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

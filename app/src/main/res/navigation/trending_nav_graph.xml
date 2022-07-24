@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trending_nav_graph"
+    app:startDestination="@id/trendingListFragment">
+
+    <fragment
+        android:id="@+id/trendingListFragment"
+        android:name="com.example.gittrendings.presentation.TrendingListFragment"
+        android:label="@string/trending" />
+</navigation>

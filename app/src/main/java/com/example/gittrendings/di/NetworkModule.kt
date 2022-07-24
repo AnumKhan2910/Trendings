@@ -1,5 +1,6 @@
 package com.example.gittrendings.di
 
+import com.example.gittrendings.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
