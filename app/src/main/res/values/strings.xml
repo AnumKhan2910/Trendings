@@ -2,4 +2,6 @@
     <string name="app_name">Git Trendings</string>
     <string name="trending">Trending</string>
     <string name="unexpected_error">Unexpected error</string>
+    <string name="refresh">Refresh</string>
+    <string name="change_mode">Change Mode</string>
 </resources>

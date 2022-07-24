@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/fragment_trending_list.xml" value="0.12083333333333333" />
         <entry key="app/src/main/res/layout/item_placeholder.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/item_trending.xml" value="0.4074074074074074" />
+        <entry key="app/src/main/res/menu/refresh_menu.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>
