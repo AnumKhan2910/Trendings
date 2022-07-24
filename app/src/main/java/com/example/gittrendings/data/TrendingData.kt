@@ -11,11 +11,11 @@ data class TrendingResponse(
 @JsonClass(generateAdapter = true)
 data class TrendingData(
     val id: String,
-    val name: String,
-    val language: String,
+    val name: String?,
+    val language: String?,
     @Json(name = "stargazers_count")
-    val stargazersCount: Long,
-    val description: String,
+    val stargazersCount: Long?,
+    val description: String?,
     val owner: Owner
 )
 

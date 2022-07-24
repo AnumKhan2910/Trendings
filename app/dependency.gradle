@@ -32,6 +32,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$navigation_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
 
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation "com.airbnb.android:lottie:$lottie_animation"
+
     //Dagger-hilt
     implementation "com.google.dagger:hilt-android:$dagger_hilt"
     kapt "com.google.dagger:hilt-compiler:$dagger_hilt"

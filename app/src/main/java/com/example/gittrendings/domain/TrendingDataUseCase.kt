@@ -31,11 +31,11 @@ class DefaultTrendingDataUseCase @Inject constructor(
     private fun onSuccess(result: ResponseResult.Success<TrendingResponse>) =
         TrendingUIState.Success(result.data.items.map { TrendingUIData(
             id = it.id,
-            name = it.name,
+            name = it.name.orEmpty(),
             fullName = it.owner.login,
-            description = it.description,
+            description = it.description.orEmpty(),
             stargazersCount = it.stargazersCount.toString(),
-            language = it.language,
+            language = it.language.orEmpty(),
             image = it.owner.avatarUrl)
         })
 
