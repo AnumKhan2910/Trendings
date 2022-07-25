@@ -72,11 +72,13 @@ class TrendingListFragment: Fragment() {
     }
 
     private fun showShimmer() {
+        binding.recyclerView.visibility = View.GONE
         binding.shimmerViewContainer.visibility = View.VISIBLE
         binding.shimmerViewContainer.startShimmerAnimation()
     }
 
     private fun hideShimmer() {
+        binding.recyclerView.visibility = View.VISIBLE
         binding.shimmerViewContainer.visibility = View.GONE
         binding.shimmerViewContainer.stopShimmerAnimation()
     }
@@ -102,5 +104,4 @@ class TrendingListFragment: Fragment() {
             }
         AppCompatDelegate.setDefaultNightMode(mode)
     }
-
 }

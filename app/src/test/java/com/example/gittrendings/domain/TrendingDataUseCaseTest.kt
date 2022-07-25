@@ -22,7 +22,6 @@ class TrendingDataUseCaseTest {
     @Mock
     private lateinit var repository: TrendingRepository
 
-
     private lateinit var trendingDataUseCase: TrendingDataUseCase
 
     @Before
@@ -32,7 +31,6 @@ class TrendingDataUseCaseTest {
             repository
         )
     }
-
 
     @Test
     fun `execute get trending projects and expect network failure`() = runBlocking {
@@ -54,7 +52,7 @@ class TrendingDataUseCaseTest {
     }
 
     @Test
-    fun `execute get pictures and expect api failure`() = runBlocking {
+    fun `execute get trending projects and expect api failure`() = runBlocking {
         val message = "validation failed"
         val errorResponse = ErrorResponse(
             statusCode = 402,
@@ -76,7 +74,7 @@ class TrendingDataUseCaseTest {
     }
 
     @Test
-    fun `execute get pictures and expect success response`() = runBlocking {
+    fun `execute get trending projects and expect success response`() = runBlocking {
         val data = TrendingResponse(listOf())
         val responseResult = ResponseResult.Success(data)
         val successUIData = TrendingUIState.Success(listOf())

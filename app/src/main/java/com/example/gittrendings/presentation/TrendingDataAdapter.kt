@@ -29,7 +29,6 @@ class TrendingDataAdapter constructor(
         }
     }
 
-
     class TrendingViewHolder constructor(
         private val binding: ItemTrendingBinding,
         var itemClickListener: (TrendingUIData) -> Unit):
