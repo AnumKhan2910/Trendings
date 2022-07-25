@@ -1,7 +1,8 @@
 package com.example.gittrendings.di
 
-import com.example.gittrendings.data.TrendingService
-import com.example.gittrendings.domain.*
+import com.example.gittrendings.data.*
+import com.example.gittrendings.domain.DefaultTrendingDataUseCase
+import com.example.gittrendings.domain.TrendingDataUseCase
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent

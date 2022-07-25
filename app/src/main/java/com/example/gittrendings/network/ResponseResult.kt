@@ -14,15 +14,3 @@ data class ErrorResponse(
     val errorCode: Int? = 0,
     val message: String?
 )
-
-suspend fun <T> callApi(apiCall: suspend () -> T): ResponseResult<T> {
-    return try {
-        val result = apiCall.invoke()
-        ResponseResult.Success(result)
-    } catch (throwable: Throwable) {
-        ResponseResult.Failure(createUnexpectedError(throwable))
-    }
-}
-
-fun createUnexpectedError(throwable: Throwable) =
-    ErrorResponse(-1, -1, throwable.message)

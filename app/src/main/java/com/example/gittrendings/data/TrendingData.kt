@@ -1,5 +1,7 @@
 package com.example.gittrendings.data
 
+import androidx.annotation.NonNull
+import androidx.room.*
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -9,13 +11,17 @@ data class TrendingResponse(
 )
 
 @JsonClass(generateAdapter = true)
+@Entity(tableName = "trending")
 data class TrendingData(
+    @NonNull
+    @PrimaryKey
     val id: String,
     val name: String?,
     val language: String?,
     @Json(name = "stargazers_count")
     val stargazersCount: Long?,
     val description: String?,
+    @Embedded
     val owner: Owner
 )
 

@@ -24,9 +24,9 @@ class TrendingListViewModel @Inject constructor(
         MutableLiveData()
     }
 
-    fun fetchTrendingProjects() {
+    fun fetchTrendingProjects(refresh: Boolean) {
         viewModelScope.launch {
-            trendingDataUseCase(Unit).collectLatest {
+            trendingDataUseCase(refresh).collectLatest {
                 _viewStateLiveData.value = it
                 if (it is TrendingUIState.Success) {
                     _trendingList.value = it.data

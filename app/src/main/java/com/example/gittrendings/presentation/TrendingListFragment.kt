@@ -42,7 +42,7 @@ class TrendingListFragment: Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_refresh -> {
-                listViewModel.fetchTrendingProjects()
+                listViewModel.fetchTrendingProjects(true)
             }
             R.id.action_change_mode -> {
                 changeMode()
@@ -53,7 +53,7 @@ class TrendingListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listViewModel.fetchTrendingProjects()
+        listViewModel.fetchTrendingProjects(false)
 
         listViewModel.viewStateLiveData.observe(this, {
             when(it) {

@@ -10,17 +10,17 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-interface TrendingDataUseCase : FlowUseCase<Unit, TrendingUIState>
+interface TrendingDataUseCase : FlowUseCase<Boolean, TrendingUIState>
 
 class DefaultTrendingDataUseCase @Inject constructor(
     private val stringResourceManager: StringResourceManager,
     private val repository: TrendingRepository
 ) : TrendingDataUseCase {
 
-    override fun invoke(request: Unit): Flow<TrendingUIState> = flow {
+    override fun invoke(request: Boolean): Flow<TrendingUIState> = flow {
         emit(TrendingUIState.Loading)
         emit(
-            when (val response = repository.getTrendingRepo()) {
+            when (val response = repository.getTrendingRepo(request)) {
                 is ResponseResult.Success -> onSuccess(response)
                 is ResponseResult.Failure -> onFailure(response)
                 is ResponseResult.NetworkError -> onNetworkError()
